@@ -1,0 +1,46 @@
+/* 
+ * Custom base (or global) styles 
+ *
+ * By using the '@layer' directive, Tailwind will automatically move those 
+ * styles to the same place/layer as '@tailwind base' to avoid unintended specificity issues.
+ */
+@tailwind base;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* 
+ * Custom components
+ *
+ * By using the '@layer' directive, Tailwind will automatically move those 
+ * styles to the same place/layer as '@tailwind components' to avoid unintended specificity issues.
+ *
+ * Using the @layer directive will also instruct Tailwind to consider those 
+ * styles for purging when purging the components layer. 
+ *
+ * @apply directive helps us extract common utility patterns to CSS component classes easily.
+ */
+
+@tailwind components;
+
+@layer components {}
+
+/* 
+ * Custom utilities
+ *
+ * By using the '@layer' directive, Tailwind will automatically move those 
+ * styles to the same place/layer as '@tailwind utilities' to avoid unintended specificity issues.
+ *
+ * Using the @layer directive will also instruct Tailwind to consider those 
+ * styles for purging when purging the utilities layer. 
+ *
+ * Wrap definitions in the '@variants' directive to generate responsive, hover, 
+ * focus, active, and other variants of utilities.
+ */
+
+@tailwind utilities;
+
+@layer utilities {}
