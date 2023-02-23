@@ -5,7 +5,12 @@ module.exports = {
         "./src/components/**/*.{js,jsx,ts,tsx}",
     ],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                "blox-magenta": "#9D28A7",
+                "blox-indigo": "#2D42FF",
+            },
+        },
     },
     plugins: [],
 }

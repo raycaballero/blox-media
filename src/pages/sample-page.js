@@ -24,14 +24,14 @@ export default function Home({ data }) {
 
 //highlight-start
 export const pageQuery = graphql`
-  query {
-    allWpPost(sort: { fields: [date] }) {
-      nodes {
-        title
-        excerpt
-        slug
-      }
+    query {
+        allWpPost(sort: { fields: [date] }) {
+            nodes {
+                title
+                excerpt
+                slug
+            }
+        }
     }
-  }
 `
 //highlight-end

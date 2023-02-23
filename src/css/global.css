@@ -43,4 +43,17 @@
 
 @tailwind utilities;
 
-@layer utilities {}
+@layer utilities {
+    .stroke-strong strong {
+        /* color: #fff;
+        -webkit-text-fill-color: black;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #fff; */
+
+        color: black;
+        text-shadow: -1px -1px 0 #fff,
+            1px -1px 0 #fff,
+            -1px 1px 0 #fff,
+            1px 1px 0 #fff;
+    }
+}
