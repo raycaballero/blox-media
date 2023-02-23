@@ -48,7 +48,7 @@ export default function Home({ data }) {
             </section>
 
             {/* Featured Event */}
-            <section className="featured container mx-auto grid min-h-screen grid-cols-1 pb-20 lg:grid-cols-2">
+            <section className="featured container mx-auto grid min-h-screen grid-cols-1 pb-20 lg:grid-cols-2 overflow-x-hidden">
                 <StaticImage
                     src="../../static/ellipse-indigo.png"
                     alt="Ellipse Indigo"
@@ -104,8 +104,6 @@ export default function Home({ data }) {
                         <h3 className="text-sm font-bold uppercase text-blox-pink md:text-lg">
                             {parse(community.caption)}
                         </h3>
-                    </FadeIn>
-                    <FadeIn duration={0.5} startY={50}>
                         <h1 className="stroke-strong animated mt-3 text-3xl font-extrabold uppercase md:text-6xl">
                             {parse(community.heading)}
                         </h1>
@@ -148,8 +146,6 @@ export default function Home({ data }) {
                         <h3 className="text-sm font-bold uppercase text-blox-pink md:text-lg">
                             {parse(connect.caption)}
                         </h3>
-                    </FadeIn>
-                    <FadeIn duration={0.5} startY={50}>
                         <h1 className="stroke-strong animated mt-3 text-3xl font-extrabold uppercase md:text-6xl">
                             {parse(connect.heading)}
                         </h1>
