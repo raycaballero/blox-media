@@ -53,11 +53,13 @@ export default function Home({ data }) {
                     src="../../static/ellipse-indigo.png"
                     alt="Ellipse Indigo"
                     className="blob-indigo fixed -right-72 top-0 z-10 h-160 w-160"
+                    imageClassName="blob-indigo fixed -right-72 top-0 z-10 h-160 w-160"
                 />
                 <StaticImage
                     src="../../static/ellipse-magenta.png"
                     alt="Ellipse Magenta"
                     className="blob-magenta fixed -left-72 bottom-0 z-10 h-160 w-160"
+                    imageClassName="blob-magenta fixed -left-72 bottom-0 z-10 h-160 w-160"
                 />
                 <div className="z-20 flex items-center justify-center text-center">
                     <FadeIn duration={0.5} startY={50}>
