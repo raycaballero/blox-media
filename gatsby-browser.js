@@ -8,4 +8,3 @@ import "./src/css/normalize.css"
 // custom CSS styles
 // import "./src/css/style.css"
 import "./src/css/global.css"
-import "@fontsource/inter" 
