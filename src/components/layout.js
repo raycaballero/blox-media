@@ -29,14 +29,13 @@ const Layout = ({ pageTitle, isHomePage, children }) => {
                 "
                 data-is-root-path={isHomePage}
             >
-                {/* <header className="fixed z-50 hidden w-full bg-black py-5 md:block"> */}
-                <header className="fixed z-50 hidden w-full bg-black py-5">
-                    <div className="container mx-auto flex items-center justify-between">
+                <header className="fixed z-50  w-full bg-black py-5 ">
+                    <div className="container mx-auto flex items-center justify-center md:justify-between">
                         <Link to="/">
                             <Logo />
                         </Link>
                         <Link to="/">
-                            <button className="rounded-full bg-gradient-to-r from-blox-magenta to-blox-indigo px-10 py-1 text-lg font-semibold text-white duration-300 ease-in-out hover:scale-125">
+                            <button className="hidden rounded-full bg-gradient-to-r from-blox-magenta to-blox-indigo px-10 py-1 text-lg font-semibold text-white duration-300 ease-in-out md:block">
                                 Watch Live Webinar
                             </button>
                         </Link>

@@ -8,9 +8,9 @@ export default function Home({ data }) {
     const { hero, featured, community, connect } = data.wpPage.home
 
     return (
-        <Layout isHomePage={true} className="text-white">
+        <Layout isHomePage={true} className="relative text-white">
             <div className="hero flex min-h-screen items-center justify-center">
-                <div className="flex flex-col space-y-8 text-center">
+                <div className="z-40 flex flex-col space-y-8 text-center">
                     <h1 className="stroke-strong text-3xl font-extrabold uppercase md:text-6xl">
                         {parse(hero.heading)}
                     </h1>
@@ -23,6 +23,11 @@ export default function Home({ data }) {
                         </button>
                     </Link>
                 </div>
+                <GatsbyImage
+                    image={hero.image.localFile.childImageSharp.gatsbyImageData}
+                    alt={"Hero Image"}
+                    className="h-100 absolute h-screen w-screen"
+                />
             </div>
             <div className="featured"></div>
             <div className="community">
