@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import { GatsbyImage } from "gatsby-plugin-image"
 import parse from "html-react-parser"
-import Animate from "../components/animations/animate"
+import Animate from "../components/animations/Animate"
 
 export default function Home({ data }) {
     const { hero, featured, community, connect } = data.wpPage.home
