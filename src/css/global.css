@@ -26,7 +26,37 @@
 
 @tailwind components;
 
-@layer components {}
+@layer components {
+    .featured-description p {
+        @apply mb-5;
+    }
+
+    .featured-description ul {
+        @apply list-disc;
+    }
+
+    .featured-description li {
+        @apply ml-5;
+    }
+
+    .outline-shadow {
+        overflow: visible;
+    }
+
+
+    .outline-shadow:before {
+        width: 100%;
+        height: 100%;
+        padding-right: 1em;
+        margin-right: 1em;
+        content: '';
+        @apply border-2 border-blox-magenta rounded-8xl;
+        position: absolute;
+        top: 3em;
+        left: 3em;
+    }
+
+}
 
 /* 
  * Custom utilities
@@ -45,15 +75,15 @@
 
 @layer utilities {
     .stroke-strong strong {
-        /* color: #fff;
-        -webkit-text-fill-color: black;
+        color: #fff;
+        -webkit-text-fill-color: transparent;
         -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: #fff; */
+        -webkit-text-stroke-color: #fff;
 
-        color: black;
+        /* color: black;
         text-shadow: -1px -1px 0 #fff,
             1px -1px 0 #fff,
             -1px 1px 0 #fff,
-            1px 1px 0 #fff;
+            1px 1px 0 #fff; */
     }
 }

@@ -1,10 +1,19 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
+import cn from "classnames"
 // import parse from "html-react-parser"
 import SEO from "./seo"
 import Logo from "./partials/logo"
 
 const Layout = ({ pageTitle, isHomePage, children }) => {
+    const [isScrollOnTop, setIsScrollOnTop] = useState(true)
+
+    useEffect(() => {
+        window?.addEventListener("scroll", function () {
+            setIsScrollOnTop(this.scrollY === 0)
+        })
+    })
+
     const {
         wp: {
             generalSettings: { title },
@@ -24,12 +33,17 @@ const Layout = ({ pageTitle, isHomePage, children }) => {
         <>
             <SEO title={pageTitle} />
             <div
-                className="
-                    flex min-h-screen flex-col bg-black text-white
-                "
+                className="flex min-h-screen flex-col bg-black text-white"
                 data-is-root-path={isHomePage}
             >
-                <header className="fixed z-50  w-full bg-black py-5 ">
+                <header
+                    className={cn(
+                        "fixed z-50  w-full bg-black py-5 duration-200 ease-linear",
+                        {
+                            "bg-transparent": isScrollOnTop,
+                        }
+                    )}
+                >
                     <div className="container mx-auto flex items-center justify-center md:justify-between">
                         <Link to="/">
                             <Logo />

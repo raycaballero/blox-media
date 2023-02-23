@@ -10,6 +10,9 @@ module.exports = {
                 "blox-magenta": "#9D28A7",
                 "blox-indigo": "#2D42FF",
             },
+            borderRadius: {
+                "8xl": "4rem",
+            },
         },
     },
     plugins: [],
