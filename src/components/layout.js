@@ -4,9 +4,16 @@ import cn from "classnames"
 // import parse from "html-react-parser"
 import SEO from "./seo"
 import Logo from "./partials/logo"
+import { motion, useScroll, useSpring } from "framer-motion"
 
 const Layout = ({ pageTitle, isHomePage, children }) => {
     const [isScrollOnTop, setIsScrollOnTop] = useState(true)
+    const { scrollYProgress } = useScroll()
+    const scaleX = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+    })
 
     useEffect(() => {
         window?.addEventListener("scroll", function () {
@@ -36,11 +43,13 @@ const Layout = ({ pageTitle, isHomePage, children }) => {
                 className="flex min-h-screen flex-col bg-black text-white"
                 data-is-root-path={isHomePage}
             >
+                
                 <header
                     className={cn(
-                        "fixed z-50  w-full bg-black py-5 duration-200 ease-linear",
+                        "fixed z-50 w-full py-5 duration-200 ease-linear",
                         {
                             "bg-transparent": isScrollOnTop,
+                            "bg-black/75 backdrop-blur-lg": !isScrollOnTop,
                         }
                     )}
                 >
@@ -56,10 +65,11 @@ const Layout = ({ pageTitle, isHomePage, children }) => {
                         {/* {parse(title)} */}
                     </div>
                 </header>
+                <motion.div className="progress-bar z-50" style={{ scaleX }} />
 
                 <main>{children}</main>
 
-                <footer className="mt-auto bg-black text-white">
+                <footer className="mt-auto pt-20 text-white z-20">
                     <div className="container mx-auto grid grid-cols-1 gap-y-10 border-t py-20 md:grid-cols-3">
                         <div className="flex items-center justify-center md:justify-start">
                             <Logo />
