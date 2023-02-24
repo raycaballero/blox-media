@@ -21,6 +21,34 @@ const Layout = ({ pageTitle, isHomePage, children }) => {
         })
     })
 
+    function useScrollDirection() {
+        const [scrollDirection, setScrollDirection] = useState(null)
+
+        useEffect(() => {
+            let lastScrollY = window.pageYOffset
+
+            const updateScrollDirection = () => {
+                const scrollY = window.pageYOffset
+                const direction = scrollY > lastScrollY ? "down" : "up"
+                if (
+                    direction !== scrollDirection &&
+                    (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)
+                ) {
+                    setScrollDirection(direction)
+                }
+                lastScrollY = scrollY > 0 ? scrollY : 0
+            }
+            window.addEventListener("scroll", updateScrollDirection) // add event listener
+            return () => {
+                window.removeEventListener("scroll", updateScrollDirection) // clean up
+            }
+        }, [scrollDirection])
+
+        return scrollDirection
+    }
+
+    const scrollDirection = useScrollDirection()
+
     const {
         wp: {
             generalSettings: { title },
@@ -38,18 +66,20 @@ const Layout = ({ pageTitle, isHomePage, children }) => {
 
     return (
         <>
-            <SEO title={pageTitle} />
+            <SEO title={pageTitle} description="Blox Media Website"/>
             <div
                 className="flex min-h-screen flex-col bg-black text-white"
                 data-is-root-path={isHomePage}
             >
-                
+                {/* <div className="fixed z-50 w-full"> */}
                 <header
                     className={cn(
                         "fixed z-50 w-full py-5 duration-200 ease-linear",
                         {
                             "bg-transparent": isScrollOnTop,
-                            "bg-black/75 backdrop-blur-lg": !isScrollOnTop,
+                            "top-0 bg-black/75 backdrop-blur-lg":
+                                scrollDirection === "up" && !isScrollOnTop,
+                            "-top-24": scrollDirection === "down",
                         }
                     )}
                 >
@@ -65,11 +95,12 @@ const Layout = ({ pageTitle, isHomePage, children }) => {
                         {/* {parse(title)} */}
                     </div>
                 </header>
+                {/* </div> */}
                 <motion.div className="progress-bar z-50" style={{ scaleX }} />
 
                 <main>{children}</main>
 
-                <footer className="mt-auto pt-20 text-white z-20">
+                <footer className="z-20 mt-auto pt-20 text-white">
                     <div className="container mx-auto grid grid-cols-1 gap-y-10 border-t py-20 md:grid-cols-3">
                         <div className="flex items-center justify-center md:justify-start">
                             <Logo />

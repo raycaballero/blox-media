@@ -15,17 +15,17 @@ export default function Home({ data }) {
             {/* Hero */}
             <section className="hero flex min-h-screen items-center justify-center">
                 <div className="container z-30 flex flex-col space-y-8 px-3 text-center">
-                    <FadeIn duration={0.5} startY={50}>
+                    <FadeIn duration={0.5}>
                         <h1 className="stroke-strong animated text-3xl font-extrabold uppercase md:text-6xl">
                             {parse(hero.heading)}
                         </h1>
                     </FadeIn>
-                    <FadeIn duration={0.5} startY={50}>
+                    <FadeIn duration={0.5}>
                         <p className="text-sm md:text-lg">
                             {parse(hero.description)}
                         </p>
                     </FadeIn>
-                    <FadeIn duration={0.5} startY={50}>
+                    <FadeIn duration={0.5}>
                         <Link to={hero.ctaUrl ?? ""}>
                             <button className="rounded-full bg-gradient-to-r from-blox-magenta to-blox-indigo px-10 py-1 text-sm font-semibold text-white duration-300 ease-in-out md:text-lg">
                                 {hero.ctaLabel}
@@ -62,7 +62,7 @@ export default function Home({ data }) {
                     // imageClassName="blob-magenta fixed -left-72 bottom-0 z-10 h-160 w-160"
                 />
                 <div className="z-20 flex items-center justify-center text-center">
-                    <FadeIn duration={0.5} startY={50}>
+                    <FadeIn duration={0.5}>
                         <GatsbyImage
                             image={
                                 featured.image.localFile.childImageSharp
@@ -75,17 +75,17 @@ export default function Home({ data }) {
                 </div>
                 <div className="z-20 flex items-center justify-center p-3 md:p-10">
                     <div className="flex flex-col space-y-8 p-8">
-                        <FadeIn duration={0.5} startY={50}>
+                        <FadeIn duration={0.5}>
                             <h1 className="stroke-strong animated mt-5 text-3xl font-extrabold uppercase md:mt-10 md:text-6xl">
                                 {parse(featured.heading)}
                             </h1>
                         </FadeIn>
-                        <FadeIn duration={0.6} startY={50}>
+                        <FadeIn duration={0.6}>
                             <p className="wysiwyg text-sm md:text-lg">
                                 {parse(featured.description)}
                             </p>
                         </FadeIn>
-                        <FadeIn duration={0.5} startY={50}>
+                        <FadeIn duration={0.5}>
                             <div className="flex justify-center md:justify-start">
                                 <Link to={featured.ctaUrl ?? ""}>
                                     <button className="rounded-full bg-gradient-to-r from-blox-magenta to-blox-indigo px-10 py-1 text-sm font-semibold text-white duration-300 ease-in-out md:text-lg">
@@ -99,19 +99,18 @@ export default function Home({ data }) {
             </section>
 
             {/* Community */}
-
             <section className="community container mx-auto grid min-h-screen grid-cols-1 py-10 md:py-20">
                 <div className="z-10 text-center">
-                    <FadeIn duration={0.5} startY={50}>
-                        <h3 className="text-sm font-bold uppercase text-blox-pink md:text-lg">
+                    <FadeIn duration={0.5}>
+                        <p className="text-sm font-bold uppercase text-blox-pink md:text-lg">
                             {parse(community.caption)}
-                        </h3>
+                        </p>
                         <h1 className="stroke-strong animated mt-3 text-3xl font-extrabold uppercase md:text-6xl">
                             {parse(community.heading)}
                         </h1>
                     </FadeIn>
                 </div>
-                <FadeIn duration={0.7} startY={50}>
+                <FadeIn duration={0.7}>
                     <div className="flex flex-col items-center lg:flex-row">
                         <div className="z-10 mt-5 flex md:mt-20 lg:order-2 lg:mt-0">
                             {/* <Bounce> */}
@@ -144,16 +143,16 @@ export default function Home({ data }) {
             {/* Connect */}
             <section className="connect container mx-auto grid min-h-screen grid-cols-1 py-10 md:py-20">
                 <div className="z-10 text-center">
-                    <FadeIn duration={0.5} startY={50}>
-                        <h3 className="text-sm font-bold uppercase text-blox-pink md:text-lg">
+                    <FadeIn duration={0.5}>
+                        <p className="text-sm font-bold uppercase text-blox-pink md:text-lg">
                             {parse(connect.caption)}
-                        </h3>
+                        </p>
                         <h1 className="stroke-strong animated mt-3 text-3xl font-extrabold uppercase md:text-6xl">
                             {parse(connect.heading)}
                         </h1>
                     </FadeIn>
                 </div>
-                <FadeIn duration={0.7} startY={50}>
+                <FadeIn duration={0.7}>
                     <div className="flex flex-col items-center lg:flex-row">
                         {/* <Bounce> */}
                         <div className="z-10 mt-5 flex md:mt-20 lg:mt-0">
@@ -180,6 +179,7 @@ export default function Home({ data }) {
                             </div>
                             <div className="mt-5 text-center">
                                 <a
+                                aria-label={`Email us at ${connect.contact}`}
                                     href={`mailto:${connect.contact}`}
                                     className="text-sm font-bold text-blox-pink md:text-lg"
                                 >
