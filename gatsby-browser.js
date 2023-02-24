@@ -9,6 +9,6 @@ import "./src/css/normalize.css"
 // import "./src/css/style.css"
 import "./src/css/global.css"
 
-console.log = () => {}
-console.error = () => {}
-console.debug = () => {}
+// console.log = () => {}
+// console.error = () => {}
+// console.debug = () => {}
