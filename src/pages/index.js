@@ -48,7 +48,7 @@ export default function Home({ data }) {
             </section>
 
             {/* Featured Event */}
-            <section className="featured container mx-auto grid min-h-screen grid-cols-1 pb-20 lg:grid-cols-2 overflow-x-hidden">
+            <section className="featured container mx-auto grid min-h-screen grid-cols-1 overflow-x-hidden pb-20 lg:grid-cols-2">
                 <StaticImage
                     src="../../static/ellipse-indigo.png"
                     alt="Ellipse Indigo"
@@ -61,17 +61,39 @@ export default function Home({ data }) {
                     className="blob-magenta !fixed -left-72 bottom-0 z-10 h-160 w-160"
                     // imageClassName="blob-magenta fixed -left-72 bottom-0 z-10 h-160 w-160"
                 />
-                <div className="z-20 flex items-center justify-center text-center">
-                    <FadeIn duration={0.5}>
-                        <GatsbyImage
-                            image={
-                                featured.image.localFile.childImageSharp
-                                    .gatsbyImageData
-                            }
-                            alt={"Hero Image"}
-                            className="outline-shadow relative w-10/12 rounded-3xl md:rounded-8xl"
-                        />
-                    </FadeIn>
+                <div className="relative z-20 flex items-center justify-center text-center">
+                    <div className="z-20">
+                        <FadeIn
+                            duration={0.5}
+                            startX={20}
+                            startY={20}
+                            initialOpacity={1}
+                        >
+                            <GatsbyImage
+                                image={
+                                    featured.image.localFile.childImageSharp
+                                        .gatsbyImageData
+                                }
+                                alt={"Hero Image"}
+                                className="w-10/12 rounded-3xl md:rounded-8xl"
+                            />
+                        </FadeIn>
+                    </div>
+                    <div className="absolute top-1/3 left-[27%] 2xl:left-1/3 z-10 hidden xl:block">
+                        <FadeIn
+                            duration={0.5}
+                            startX={-20}
+                            startY={-20}
+                            initialOpacity={1}
+                            className="absolute"
+                        >
+                            <StaticImage
+                                src="../../static/square-outline-magenta.png"
+                                alt="Square Outline Magenta"
+                                className="scale-[1.15] 2xl:scale-[1.35]"
+                            />
+                        </FadeIn>
+                    </div>
                 </div>
                 <div className="z-20 flex items-center justify-center p-3 md:p-10">
                     <div className="flex flex-col space-y-8 p-8">
@@ -179,7 +201,7 @@ export default function Home({ data }) {
                             </div>
                             <div className="mt-5 text-center">
                                 <a
-                                aria-label={`Email us at ${connect.contact}`}
+                                    aria-label={`Email us at ${connect.contact}`}
                                     href={`mailto:${connect.contact}`}
                                     className="text-sm font-bold text-blox-pink md:text-lg"
                                 >
