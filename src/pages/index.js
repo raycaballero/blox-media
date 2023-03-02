@@ -64,7 +64,8 @@ export default function Home({ data }) {
                 <div className="relative z-20 flex items-center justify-center text-center">
                     <div className="z-20">
                         <FadeIn
-                            duration={0.5}
+                            duration={1}
+                            delay={.5}
                             startX={20}
                             startY={20}
                             initialOpacity={1}
@@ -81,9 +82,10 @@ export default function Home({ data }) {
                     </div>
                     <div className="absolute top-1/3 left-[27%] 2xl:left-1/3 z-10 hidden xl:block">
                         <FadeIn
-                            duration={0.5}
-                            startX={-20}
-                            startY={-20}
+                            duration={1}
+                            delay={.5}
+                            startX={-50}
+                            startY={-50}
                             initialOpacity={1}
                             className="absolute"
                         >

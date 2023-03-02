@@ -7,13 +7,15 @@ const FadeIn = ({
     startY,
     initialOpacity = 0,
     duration = 1,
+    delay = 0,
 }) => {
     const variants = {
         visible: {
             opacity: 1,
             transition: {
-                // type: "spring",
+                type: "spring",
                 duration,
+                delay,
             },
             x: 0,
             y: 0,
