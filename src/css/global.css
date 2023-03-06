@@ -41,30 +41,9 @@
         @apply ml-5;
     }
 
-    /*
-    .outline-shadow {
-        overflow: visible;
+    .btn-blox-gradient {
+        @apply rounded-xl bg-gradient-to-r from-blox-magenta to-blox-indigo px-10 py-1 text-sm font-semibold text-white duration-300 ease-in-out md:text-lg
     }
-
-    .outline-shadow:before {
-        width: 100%;
-        height: 100%;
-        padding-right: 1em;
-        margin-right: 1em;
-        content: '';
-        @apply border-2 border-blox-magenta rounded-8xl hidden md:block;
-        position: absolute;
-        top: 3em;
-        left: 3em;
-        
-        box-shadow: 0 0 .2rem #fff,
-            0 0 .2rem #fff,
-            0 0 2rem #bc13fe,
-            0 0 0.8rem #bc13fe,
-            0 0 2.8rem #bc13fe,
-            inset 0 0 1.3rem #bc13fe;
-    }
-    */
 
     .hero-overlay {
         @apply absolute z-10 h-screen w-screen;
@@ -169,7 +148,28 @@
     }
 
     .stroke-strong.animated strong {
-        animation: flicker 1.5s infinite alternate;
+        animation: breathing 3.5s infinite alternate;
+    }
+
+    /* Flickering animation */
+    @keyframes breathing {
+        0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+            /* Neon text effect */
+            text-shadow:
+                0 0 4px #fff,
+                0 0 11px #fff,
+                0 0 19px #fff,
+                0 0 10px #2D42FF,
+                0 0 20px #2D42FF,
+                0 0 30px #2D42FF,
+                0 0 10px #2D42FF,
+                0 0 10px #2D42FF;
+        }
+        
+        55% {        
+            text-shadow: none;
+        }    
     }
 
     /* Flickering animation */
@@ -186,7 +186,6 @@
                 0 0 90px #2D42FF,
                 0 0 100px #2D42FF,
                 0 0 150px #2D42FF;
-        
         }
         
         20%, 24%, 55% {        

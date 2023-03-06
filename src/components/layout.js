@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import cn from "classnames"
 // import parse from "html-react-parser"
-import SEO from "./seo"
+import Seo from "./seo"
 import Logo from "./partials/logo"
 import { motion, useScroll, useSpring } from "framer-motion"
 
@@ -66,7 +66,7 @@ const Layout = ({ pageTitle, isHomePage, children }) => {
 
     return (
         <>
-            <SEO title={pageTitle} description="Blox Media Website"/>
+            <Seo title={pageTitle} description="Blox Media Website" />
             <div
                 className="flex min-h-screen flex-col bg-black text-white"
                 data-is-root-path={isHomePage}
@@ -88,7 +88,7 @@ const Layout = ({ pageTitle, isHomePage, children }) => {
                             <Logo />
                         </Link>
                         <Link to="/">
-                            <button className="hidden rounded-full bg-gradient-to-r from-blox-magenta to-blox-indigo px-10 py-1 text-lg font-semibold text-white duration-300 ease-in-out md:block">
+                            <button className="btn-blox-gradient hidden md:block">
                                 Watch Live Webinar
                             </button>
                         </Link>

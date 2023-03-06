@@ -27,7 +27,7 @@ export default function Home({ data }) {
                     </FadeIn>
                     <FadeIn duration={0.5}>
                         <Link to={hero.ctaUrl ?? ""}>
-                            <button className="rounded-full bg-gradient-to-r from-blox-magenta to-blox-indigo px-10 py-1 text-sm font-semibold text-white duration-300 ease-in-out md:text-lg">
+                            <button className="btn-blox-gradient">
                                 {hero.ctaLabel}
                             </button>
                         </Link>
@@ -49,26 +49,23 @@ export default function Home({ data }) {
 
             {/* Featured Event */}
             <section className="featured container mx-auto grid min-h-screen grid-cols-1 overflow-x-hidden pb-20 lg:grid-cols-2">
-                <StaticImage
+                {/* <StaticImage
                     src="../../static/ellipse-indigo.png"
                     alt="Ellipse Indigo"
                     className="blob-indigo !fixed -right-72 top-0 z-10 h-160 w-160"
-                    // imageClassName="blob-indigo fixed -right-72 top-0 z-10 h-160 w-160"
                 />
                 <StaticImage
                     src="../../static/ellipse-magenta.png"
                     alt="Ellipse Magenta"
                     className="blob-magenta !fixed -left-72 bottom-0 z-10 h-160 w-160"
-                    // imageClassName="blob-magenta fixed -left-72 bottom-0 z-10 h-160 w-160"
-                />
+                /> */}
                 <div className="relative z-20 flex items-center justify-center text-center">
                     <div className="z-20">
                         <FadeIn
-                            duration={1}
-                            delay={.5}
+                            duration={0.3}
+                            delay={0.3}
                             startX={20}
                             startY={20}
-                            initialOpacity={1}
                         >
                             <GatsbyImage
                                 image={
@@ -80,13 +77,12 @@ export default function Home({ data }) {
                             />
                         </FadeIn>
                     </div>
-                    <div className="absolute top-1/3 left-[27%] 2xl:left-1/3 z-10 hidden xl:block">
+                    <div className="absolute top-1/3 left-[27%] z-10 hidden xl:block 2xl:left-1/3">
                         <FadeIn
-                            duration={1}
-                            delay={.5}
+                            duration={0.4}
+                            delay={0.3}
                             startX={-50}
                             startY={-50}
-                            initialOpacity={1}
                             className="absolute"
                         >
                             <StaticImage
@@ -112,7 +108,7 @@ export default function Home({ data }) {
                         <FadeIn duration={0.5}>
                             <div className="flex justify-center md:justify-start">
                                 <Link to={featured.ctaUrl ?? ""}>
-                                    <button className="rounded-full bg-gradient-to-r from-blox-magenta to-blox-indigo px-10 py-1 text-sm font-semibold text-white duration-300 ease-in-out md:text-lg">
+                                    <button className="btn-blox-gradient">
                                         {featured.ctaLabel}
                                     </button>
                                 </Link>
@@ -154,7 +150,7 @@ export default function Home({ data }) {
                             </p>
                             <div className="mt-8 flex justify-center">
                                 <Link to={community.ctaUrl ?? ""}>
-                                    <button className="rounded-full bg-gradient-to-r from-blox-magenta to-blox-indigo px-10 py-1 text-sm font-semibold text-white duration-300 ease-in-out md:text-lg">
+                                    <button className="btn-blox-gradient">
                                         {community.ctaLabel}
                                     </button>
                                 </Link>
@@ -196,7 +192,7 @@ export default function Home({ data }) {
                             </p>
                             <div className="mt-8 flex justify-center">
                                 <Link to={connect.ctaUrl ?? ""}>
-                                    <button className="rounded-full bg-gradient-to-r from-blox-magenta to-blox-indigo px-10 py-1 text-sm font-semibold text-white duration-300 ease-in-out md:text-lg">
+                                    <button className="btn-blox-gradient">
                                         {connect.ctaLabel}
                                     </button>
                                 </Link>

@@ -13,7 +13,7 @@ const FadeIn = ({
         visible: {
             opacity: 1,
             transition: {
-                type: "spring",
+                // type: "spring",
                 duration,
                 delay,
             },
