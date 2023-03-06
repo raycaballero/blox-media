@@ -8,6 +8,7 @@ const FadeIn = ({
     initialOpacity = 0,
     duration = 1,
     delay = 0,
+    ...props
 }) => {
     const variants = {
         visible: {
@@ -19,12 +20,14 @@ const FadeIn = ({
             },
             x: 0,
             y: 0,
+            ...props
         },
         hidden: {
             opacity: initialOpacity,
             x: startX,
             y: startY,
         },
+        
     }
 
     return (

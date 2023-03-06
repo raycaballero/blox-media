@@ -62,10 +62,12 @@ export default function Home({ data }) {
                 <div className="relative z-20 flex items-center justify-center text-center">
                     <div className="z-20">
                         <FadeIn
-                            duration={0.3}
-                            delay={0.3}
+                            duration={0.2}
+                            delay={0.5}
                             startX={20}
                             startY={20}
+                            initialOpacity={1}
+                            rotate={-5}
                         >
                             <GatsbyImage
                                 image={
@@ -79,10 +81,12 @@ export default function Home({ data }) {
                     </div>
                     <div className="absolute top-1/3 left-[27%] z-10 hidden xl:block 2xl:left-1/3">
                         <FadeIn
-                            duration={0.4}
-                            delay={0.3}
+                            duration={0.2}
+                            delay={0.5}
                             startX={-50}
                             startY={-50}
+                            // initialOpacity={1}
+                            rotate={5}
                             className="absolute"
                         >
                             <StaticImage
